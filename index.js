@@ -12,7 +12,7 @@ app.use(cors());
 
 
 // Connection URI
-const uri = "mongodb+srv://radiodb:NZtOf52Ss1kLMYDR@cluster0.r4ki1.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.r4ki1.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
